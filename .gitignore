@@ -1,0 +1,17 @@
+ctl/*
+nuc/*
+tree/*
+new_controls/*
+paml_output/*
+*.ctl
+*.mcl
+*.dN
+*.dS
+*.t
+*.pyc
+inf
+rst
+rst1
+rub
+*.nuc
+lnf
