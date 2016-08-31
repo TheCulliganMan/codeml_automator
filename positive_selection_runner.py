@@ -82,7 +82,7 @@ def main():
                         help='an integer for the accumulator')
 	parser.add_argument('-tree_file', default='treen.trees',
                         help='location of the tree file')
-	parser.add_argument('-paml_output', default='nuc',
+	parser.add_argument('-paml_output', default='paml_output',
                         help='where to output the paml files')
 	parser.add_argument('-c', type=int, default=1,
                         help='Number of cores')
