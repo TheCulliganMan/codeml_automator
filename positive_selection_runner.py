@@ -35,8 +35,13 @@ def get_trees(tree_dir, full_tree):
 				trees.append((tree, tree_name))
 	return trees
 
+def make_new_output(ctr_folder, output_folder):
+	new_path =  os.path.join(ctr_folder, output_folder)
+	os.makedirs(new_path)
+	return new_path
 
-def run_gene_controls(gene_controls, genes, trees, paml_output, output_folder):
+
+def run_gene_controls(gene_controls, genes, trees, paml_output, ctr_folder):
 
 	output_files = []
 
@@ -51,6 +56,9 @@ def run_gene_controls(gene_controls, genes, trees, paml_output, output_folder):
 
 				mlc_out_file = os.path.join(paml_output,
 											"{}.mlc".format(output_name))
+
+				output_folder = make_new_output(ctr_folder, output_name)
+
 				ctl_out_file = os.path.join(output_folder,
 											"{}.ctl".format(output_name))
 
@@ -65,7 +73,9 @@ def run_gene_controls(gene_controls, genes, trees, paml_output, output_folder):
 
 
 def main():
+
 	parser = argparse.ArgumentParser(description='Process some integers.')
+
 	parser.add_argument('-gene_dir', default='nuc',
                         help='Location of the genes that you want to run.')
 	parser.add_argument('-tree_dir', default='tree',
@@ -78,6 +88,7 @@ def main():
                         help='Number of cores')
 	parser.add_argument('-new_controls_dir', default='new_controls',
 						help="where more files are output.")
+
 	args = parser.parse_args()
 	gene_dir = args.gene_dir
 	tree_dir = args.tree_dir
