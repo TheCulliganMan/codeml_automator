@@ -74,20 +74,20 @@ def run_gene_controls(gene_controls, genes, trees, paml_output, ctr_folder):
 
 def main():
 
-	parser = argparse.ArgumentParser(description='Process some integers.')
+	parser = argparse.ArgumentParser(description='Process some codeml files.')
 
 	parser.add_argument('-gene_dir', default='nuc',
-                        help='Location of the genes that you want to run.')
+                        help='Location of the genes that you want to run. (default "nuc")')
 	parser.add_argument('-tree_dir', default='tree',
-                        help='an integer for the accumulator')
+                        help='location of your tree files. (default "tree")')
 	parser.add_argument('-tree_file', default='treen.trees',
-                        help='location of the tree file')
+                        help='location of the master tree file. (default "<tree_dir>/treen.trees")')
 	parser.add_argument('-paml_output', default='paml_output',
-                        help='where to output the paml files')
+                        help='where to output the paml files. (default "paml_output")')
 	parser.add_argument('-c', type=int, default=1,
-                        help='Number of cores')
+                        help='Number of cores (default 1)')
 	parser.add_argument('-new_controls_dir', default='new_controls',
-						help="where more files are output.")
+						help='where more files are output. And codeml is run (default "new_controls")')
 
 	args = parser.parse_args()
 	gene_dir = args.gene_dir
