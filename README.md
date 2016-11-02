@@ -1,5 +1,5 @@
 # codeml_automator
-##automates codeml runs on subset trees for Dr. Lei
+##automates codeml runs on subset trees
 
 ###Instructions
   1. Compile the codeml binary for your machine and put it in the project root
